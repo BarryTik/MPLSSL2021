@@ -42,6 +42,10 @@ body {
     font-size: 1.6rem;
     height: 100px;
 }
+.team-logo img{
+    height: 87px;
+    width: 87px;
+}
 
 .title {
     margin: 24px 24px 18px 24px;
@@ -51,6 +55,7 @@ body {
     font-weight: bold;
     
 }
+
 .ordinal {
     display: flex;
     align-items: center;

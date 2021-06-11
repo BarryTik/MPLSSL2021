@@ -14,13 +14,10 @@ function populateTeamObjects(data){
         d3.select(`#${color}`)
             .append("div")
             .attr("class", "team-logo col-2")
-            .append("svg")
-            .attr("height", "70")
-            .attr("width", "100%")
-            .append("image")
-            .attr("href", `../../logos/${color}.png`)
-            .attr("width", "100%")
-            .attr("height", "100%");
+            .append("img")
+            .attr("src", `../logos/${color}.png`)
+            .attr("width", "85%")
+            .attr("height", "85%");
         d3.select(`#${color}`)
             .append("div")
             .attr("class", "team-info col-9")
