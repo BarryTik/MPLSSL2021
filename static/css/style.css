@@ -1,0 +1,72 @@
+html {
+    font-size: 10px;
+    box-sizing: border-box;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    background-color:#0f1519;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #252c32;
+    border-radius: 10px;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #252c32;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #1a1f24;
+}
+
+body {
+    background-color:#0f1519;
+}
+
+#standings {
+    color: #fff;
+    background-color:#0f1519;
+}
+.team {
+    
+    border-top: 1px solid #252c32;
+    align-items: center;
+    font-family: 'Colfax',Helvetica,sans-serif;
+    font-size: 1.6rem;
+    height: 100px;
+}
+
+.title {
+    margin: 24px 24px 18px 24px;
+    align-items: center;
+    font-family: 'Colfax',Helvetica,sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    
+}
+.ordinal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.6rem;
+    font-weight: bold;
+    padding-right: 24px;
+    font-family: 'Colfax',Helvetica,sans-serif;
+    
+}
+.record {
+    color: #8fa3b0;
+    font-size: 1.4rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+}
+
+
+@font-face{font-family:'Colfax';font-weight:normal;src:url("https://lolstatic-a.akamaihd.net/webfonts/live/fonts/colfax/ColfaxWebRegular.woff2") format('woff2')}
