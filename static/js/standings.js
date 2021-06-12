@@ -9,7 +9,8 @@ function populateTeamObjects(data){
         d3.select(`#${color}`)
             .append("div")
             .attr("class", "ordinal col-1")
-            .text(teamData["rank"]);
+            .text(teamData["rank"])
+            .style("visibility", teamData["visibility"]);
         d3.select(`#${color}`)
             .append("div")
             .attr("class", "team-logo col-2")
@@ -45,15 +46,20 @@ function rankTeams(data){
     scores.sort().reverse();
     var ranker = 1;
     var tracker = 1;
+    var visibility = "visible";
     for (var i=0; i<scores.length; i++){
         data[i]["rank"] = ranker;
+        data[i]["visibility"] = visibility;
         tracker++;
+        visibility = "hidden";
         if (scores[i] > scores[i+1]){
             ranker = tracker;
+            visibility = "visible";
         }
 
 
     }
+    // console.log(data);
     return(data);
 }
 
