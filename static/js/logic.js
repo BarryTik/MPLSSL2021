@@ -1,8 +1,7 @@
 function populateTeamObjects(data){
     for (var i=0; i<data.length; i++){
         var teamData = data[i];
-        // console.log(teamData);
-        color = teamData["Color"].split(" ").join("");
+        var color = teamData["Color"].split(" ").join("");
         d3.select("#standings")
             .append("div")
             .attr("id", color)
@@ -10,7 +9,7 @@ function populateTeamObjects(data){
         d3.select(`#${color}`)
             .append("div")
             .attr("class", "ordinal col-1")
-            .text(i);
+            .text(teamData["rank"]);
         d3.select(`#${color}`)
             .append("div")
             .attr("class", "team-logo col-2")
@@ -31,10 +30,35 @@ function populateTeamObjects(data){
             .append("div")
             .attr("class", "record row")
             .text(`${teamData.W}W ${teamData.L}L ${teamData.T}T`);
-            
 
     }
 }
+
+function rankTeams(data){
+    for (var i=0; i<data.length; i++){
+        data[i]["score"] = 3*parseInt(data[i]["W"]) + parseInt(data[i]["T"]);
+    }
+    var scores = [];
+    for (var i=0; i<data.length; i++){
+        scores.push(data[i]["score"]);
+    }
+    scores.sort().reverse();
+    var ranker = 1;
+    var tracker = 1;
+    for (var i=0; i<scores.length; i++){
+        data[i]["rank"] = ranker;
+        tracker++;
+        if (scores[i] > scores[i+1]){
+            ranker = tracker;
+        }
+
+
+    }
+    return(data);
+}
+
+
 d3.csv("../data/standings.csv").then(data => {
-    populateTeamObjects(data);
+    // console.log(data);
+    populateTeamObjects(rankTeams(data));
 })
