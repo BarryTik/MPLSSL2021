@@ -36,12 +36,9 @@ function populateTeamObjects(data){
 }
 
 function rankTeams(data){
-    for (var i=0; i<data.length; i++){
-        data[i]["score"] = 3*parseInt(data[i]["W"]) + parseInt(data[i]["T"]);
-    }
     var scores = [];
     for (var i=0; i<data.length; i++){
-        scores.push(data[i]["score"]);
+        scores.push(data[i]["Pts"]);
     }
     scores.sort().reverse();
     var ranker = 1;
