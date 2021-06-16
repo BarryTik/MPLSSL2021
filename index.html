@@ -21,11 +21,23 @@
         <link rel="stylesheet" type="text/css" href="static/css/style.css">
     </head>
     <body>
-        <div id="standings" class="container">
-            <div class="title">Standings</div>
+        <div id="soccer">
+            <div class="title">
+                <button class="tablink" onclick="openPage('standings', this)" id="defaultOpen">Standings</button>
+                <button class="tablink" onclick="openPage('scoring', this)">Scoring Leaders</button>
+            </div>
+            <div id="standings" class="container tabcontent">
+                <!-- <div class="title">Standings</div> -->
+            </div>
+            <div id="scoring" class="container tabcontent">
+                <!-- <div class="title">Scoring Leaders</div> -->
+                <div id="chart"></div>
+            </div>
+
         </div>
 
         <!-- Insert JS logic-->
         <script type="text/javascript" src="static/js/standings.js"></script>
+        <script type="text/javascript" src="static/js/scoring.js"></script>
     </body>
 </html>

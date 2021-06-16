@@ -74,18 +74,6 @@ d3.csv("../data/scoring.csv").then(data => {
           show: false
         }
       },
-      title: {
-          text: 'Scoring Leaders',
-          align: 'center',
-          margin: 10,
-          offsetY: 15,
-          style:{
-                color: '#fff',
-                fontFamily: 'Colfax',
-                fontSize: '1.6rem'
-          },
-          floating: true
-      },
       tooltip: {
         theme: 'dark',
         x: {

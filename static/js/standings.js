@@ -60,7 +60,23 @@ function rankTeams(data){
     return(data);
 }
 
+function openPage(pageName, element){
+    var tabcontent = document.getElementsByClassName("tabcontent");
+    var tablink = document.getElementsByClassName("tablink");
+    for (var i=0; i<tabcontent.length; i++) {
+        tabcontent[i].style.display="none";
+    }
+    for (var i=0; i<tablink.length; i++){
+        tablink[i].classList.remove('active-page');
+    }
 
+
+    document.getElementById(pageName).style.display = "block";
+    element.classList.add('active-page');
+}
+
+
+document.getElementById("defaultOpen").click();
 d3.csv("../data/standings.csv").then(data => {
     // console.log(data);
     populateTeamObjects(rankTeams(data));
