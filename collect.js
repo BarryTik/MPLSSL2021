@@ -2,6 +2,7 @@ const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
 
+
 var standingsData = {"Color":{}};
 var scoringData = {"Name":{}};
 
@@ -87,7 +88,7 @@ function getStandings(auth) {
       });
       console.log(standingsData);
       var standingsString = JSON.stringify(standingsData);
-      fs.writeFile('data/standings.json', standingsString, function (err) {
+      fs.writeFile('public/data/standings.json', standingsString, function (err) {
         if (err) throw err;
         console.log('Standings written to file');
       });
@@ -115,7 +116,7 @@ function getScoringLeaders(auth) {
         });
         console.log(scoringData);
         var scoringString = JSON.stringify(scoringData);
-        fs.writeFile('data/scoring.json', scoringString, function (err) {
+        fs.writeFile('public/data/scoring.json', scoringString, function (err) {
             if (err) throw err;
             console.log('Scoring Leaders written to file');
         });
