@@ -6,6 +6,6 @@
       "start": "node app.js"
     },
     "dependencies": {
-      "googleapis": "~78.0.0",
+      "googleapis": "~78.0.0"
     }
   }
