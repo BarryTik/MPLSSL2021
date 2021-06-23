@@ -40,11 +40,11 @@ body {
     align-items: center;
     font-family: 'Colfax',Helvetica,sans-serif;
     font-size: 1.6rem;
-    height: 100px;
+    height: 12.5%;
 }
 .team-logo img{
-    height: 87px;
-    width: 87px;
+    height: 10vh;
+    width: auto;
 }
 
 .ordinal {
@@ -58,7 +58,7 @@ body {
     
 }
 
-.record {
+.stats {
     color: #8fa3b0;
     font-size: 1.4rem;
     letter-spacing: .1rem;
@@ -67,16 +67,18 @@ body {
 
 .title{
     background-color: black;
+    height: 10vh;
 }
 
 .tablink {
     background-color: black;
+    height: 10vh;
     color: #8fa3b0;
     border: none;
     font-size: 1.8rem;
     font-weight: bold;
     font-family: 'Colfax',Helvetica,sans-serif;
-    padding: 24px 24px 18px 24px;
+    padding: 3.5vh 24px 3.5vh 24px;
 }
 
 button:focus{
@@ -87,6 +89,12 @@ button:focus{
     color: white !important;
 }
 
-
+#scoring{
+    height: 90vh;
 }
+
+#standings{
+    height: 90vh;
+}
+
 @font-face{font-family:'Colfax';font-weight:normal;src:url("https://lolstatic-a.akamaihd.net/webfonts/live/fonts/colfax/ColfaxWebRegular.woff2") format('woff2')}

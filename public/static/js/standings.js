@@ -30,8 +30,16 @@ function populateTeamObjects(data){
         d3.select(`#${color}`)
             .select(".team-info")
             .append("div")
-            .attr("class", "record row")
-            .text(`${teamData.W}W ${teamData.L}L ${teamData.T}T`);
+            .attr("class", "stats row")
+            .append("div")
+            .attr("class", "record col-4")
+            .html(`${teamData.W}<small>W</small> ${teamData.L}<small>L</small> ${teamData.T}<small>T</small>`);
+        d3.select(`#${color}`)
+            .select(".team-info")
+            .select(".stats")
+            .append("div")
+            .attr("class", "goals col-8")
+            .html(`${teamData.Pts}<small>PTS</small> ${teamData.GF}<small>GF</small> ${teamData.GA}<small>GA</small> ${teamData.GD}<small>GD</small>`)
 
     }
 }

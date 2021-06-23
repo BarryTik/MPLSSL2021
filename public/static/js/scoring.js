@@ -31,7 +31,7 @@ d3.json("data/scoring.json").then(data => {
       }],
         chart: {
         type: 'bar',
-        height: 'auto',
+        height: '95%',
         toolbar: {
             show: false
         }

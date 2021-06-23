@@ -86,7 +86,6 @@ function getStandings(auth) {
       rows.map((row) => {
         standingsData["Color"][row[9]] = {"Team": row[0], "W": row[1], "L": row[2], "T": row[3], "Pts": row[4], "GF": row[5], "GA": row[6], "GD": row[7], "Captain": row[8]};
       });
-      console.log(standingsData);
       var standingsString = JSON.stringify(standingsData);
       fs.writeFile('public/data/standings.json', standingsString, function (err) {
         if (err) throw err;
@@ -114,7 +113,6 @@ function getScoringLeaders(auth) {
         rows.map((row) => {
           scoringData["Name"][row[0]] = {"Team": row[1], "Goals": row[2]};
         });
-        console.log(scoringData);
         var scoringString = JSON.stringify(scoringData);
         fs.writeFile('public/data/scoring.json', scoringString, function (err) {
             if (err) throw err;
