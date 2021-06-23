@@ -1,0 +1,8 @@
+{
+    "name": "mplssl2021",
+    "description": "Website for MPLS Soccer League summer 2021",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js"
+    }
+  }
