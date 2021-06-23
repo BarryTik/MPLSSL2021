@@ -4,5 +4,8 @@
     "main": "app.js",
     "scripts": {
       "start": "node app.js"
+    },
+    "dependencies": {
+      "googleapis": "~78.0.0",
     }
   }
