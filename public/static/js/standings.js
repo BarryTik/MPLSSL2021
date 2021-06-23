@@ -1,7 +1,8 @@
 function populateTeamObjects(data){
-    for (var i=0; i<data.length; i++){
-        var teamData = data[i];
-        var color = teamData["Color"].split(" ").join("");
+    var colors = Object.keys(data.Color);
+    for (var i=0; i<colors.length; i++){
+        var teamData = data.Color[`${colors[i]}`];
+        var color = colors[i].split(" ").join("");
         d3.select("#standings")
             .append("div")
             .attr("id", color)
@@ -15,7 +16,7 @@ function populateTeamObjects(data){
             .append("div")
             .attr("class", "team-logo col-2")
             .append("img")
-            .attr("src", `../logos/${color}.png`)
+            .attr("src", `logos/${color}.png`)
             .attr("width", "85%")
             .attr("height", "85%");
         d3.select(`#${color}`)
@@ -37,16 +38,17 @@ function populateTeamObjects(data){
 
 function rankTeams(data){
     var scores = [];
-    for (var i=0; i<data.length; i++){
-        scores.push(data[i]["Pts"]);
+    var colors = Object.keys(data.Color);
+    for (var i=0; i<colors.length; i++){
+        scores.push(data.Color[`${colors[i]}`]["Pts"]);
     }
     scores.sort().reverse();
     var ranker = 1;
     var tracker = 1;
     var visibility = "visible";
     for (var i=0; i<scores.length; i++){
-        data[i]["rank"] = ranker;
-        data[i]["visibility"] = visibility;
+        data.Color[`${colors[i]}`]["rank"] = ranker;
+        data.Color[`${colors[i]}`]["visibility"] = visibility;
         tracker++;
         visibility = "hidden";
         if (scores[i] > scores[i+1]){
@@ -56,7 +58,6 @@ function rankTeams(data){
 
 
     }
-    // console.log(data);
     return(data);
 }
 
@@ -75,9 +76,8 @@ function openPage(pageName, element){
     element.classList.add('active-page');
 }
 
-
+var testData = {};
 document.getElementById("defaultOpen").click();
-d3.csv("../data/standings.csv").then(data => {
-    // console.log(data);
+d3.json("data/standings.json").then(data => {
     populateTeamObjects(rankTeams(data));
 })
