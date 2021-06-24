@@ -1,6 +1,5 @@
 
 d3.json("data/scoring.json").then(data => {
-  console.log(data);
     var name = [];
     var team = [];
     var goals = [];
@@ -14,15 +13,10 @@ d3.json("data/scoring.json").then(data => {
         goals.push(data["Name"][player]["Goals"]);
     }
 
-    console.log("name", name);
-    console.log("team", team);
-    console.log("goals", goals);
     for(var i = 0; i<team.length; i++){
         chartColors[i] = teamColors[team[i]];
 
     }
-
-    console.log(chartColors);
 
     var options = {
         series: [{
