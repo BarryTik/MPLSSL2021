@@ -9,6 +9,19 @@ html {
     background-color:#0f1519;
 }
 
+img {
+    max-width:100%;
+    object-fit: scale-down;
+}
+
+.team-logo {
+    padding: 0px;
+}
+
+.team-info {
+    margin: 2%;
+}
+
 ::-webkit-scrollbar {
     width: 20px;
 }

@@ -16,9 +16,7 @@ function populateTeamObjects(data){
             .append("div")
             .attr("class", "team-logo col-1")
             .append("img")
-            .attr("src", `logos/${color}.png`)
-            .attr("width", "85%")
-            .attr("height", "85%");
+            .attr("src", `logos/${color}.png`);
         d3.select(`#${color}`)
             .append("div")
             .attr("class", "team-info col-6")
