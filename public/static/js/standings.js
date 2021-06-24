@@ -6,7 +6,7 @@ function populateTeamObjects(data){
         d3.select("#standings")
             .append("div")
             .attr("id", color)
-            .attr("class", "row team");
+            .attr("class", "row justify-content-center team");
         d3.select(`#${color}`)
             .append("div")
             .attr("class", "ordinal col-1")
@@ -14,14 +14,14 @@ function populateTeamObjects(data){
             .style("visibility", teamData["visibility"]);
         d3.select(`#${color}`)
             .append("div")
-            .attr("class", "team-logo col-2")
+            .attr("class", "team-logo col-1")
             .append("img")
             .attr("src", `logos/${color}.png`)
             .attr("width", "85%")
             .attr("height", "85%");
         d3.select(`#${color}`)
             .append("div")
-            .attr("class", "team-info col-9")
+            .attr("class", "team-info col-6")
         d3.select(`#${color}`)
             .select(".team-info")
             .append("div")
