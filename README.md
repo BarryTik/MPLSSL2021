@@ -7,4 +7,4 @@ The website is run on a [Node.js](https://nodejs.org/en/) server.
 Up to date data is pulled from the league manager's spreadsheet using Node.js and the [Google Sheets API](https://developers.google.com/sheets/api).
 Scoring Leaders are visualized using the [ApexCharts](https://apexcharts.com/) library for javascript.
 
-![Team Standings and goal stats](screenshots/standings.png) ![Individual scoring stats with ApexCharts](screenshots/scoring.png)
+![Team Standings and goal stats](screenshots/standings.PNG) ![Individual scoring stats with ApexCharts](screenshots/scoring.PNG)
