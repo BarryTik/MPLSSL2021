@@ -14,7 +14,7 @@ function populateTeamObjects(data){
             .style("visibility", teamData["visibility"]);
         d3.select(`#${color}`)
             .append("div")
-            .attr("class", "team-logo col-1")
+            .attr("class", "team-logo col-med-1 col-small-2")
             .append("img")
             .attr("src", `logos/${color}.png`);
         d3.select(`#${color}`)
@@ -49,18 +49,18 @@ function rankTeams(data){
         scores.push(data.Color[`${colors[i]}`]["Pts"]);
     }
     scores.sort().reverse();
-    var ranker = 1;
+    // var ranker = 1;
     var tracker = 1;
     var visibility = "visible";
     for (var i=0; i<scores.length; i++){
-        data.Color[`${colors[i]}`]["rank"] = ranker;
+        data.Color[`${colors[i]}`]["rank"] = tracker; //ranker;
         data.Color[`${colors[i]}`]["visibility"] = visibility;
         tracker++;
-        visibility = "hidden";
-        if (scores[i] > scores[i+1]){
-            ranker = tracker;
-            visibility = "visible";
-        }
+        // visibility = "hidden";
+        // if (scores[i] > scores[i+1]){
+            // ranker = tracker;
+            // visibility = "visible";
+        // }
 
 
     }
