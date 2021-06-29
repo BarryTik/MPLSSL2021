@@ -18,6 +18,10 @@ d3.json("data/scoring.json").then(data => {
 
     }
 
+    console.log(name.length);
+    d3.select("#scoring")
+      .style("height", `${name.length*6.5}vh`);
+
     var options = {
         series: [{
             name: "Goals Scored",
@@ -48,12 +52,14 @@ d3.json("data/scoring.json").then(data => {
         enabled: true,
         textAnchor: 'start',
         style: {
-          colors: ['#fff']
+          colors: ['#fff'],
+          fontSize: '2.2vh'
         },
         formatter: function (val, opt) {
           return opt.w.globals.labels[opt.dataPointIndex] + ":  " + val
         },
         offsetX: 0,
+        offsetY: 12,
         dropShadow: {
           enabled: true
         }
@@ -85,8 +91,8 @@ d3.json("data/scoring.json").then(data => {
         },
         y: {
           title: {
-            formatter: function () {
-              return '';
+            formatter: function (val) {
+              return `${val}`;
             }
           }
         }

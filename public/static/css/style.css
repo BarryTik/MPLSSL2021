@@ -23,7 +23,7 @@ html {
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #1a1f24;
+    background: #3b4147;
 }
 
 body {
@@ -101,7 +101,7 @@ img {
     height: 10vh;
     color: #8fa3b0;
     border: none;
-    font-size: 1.8rem;
+    font-size: min(2.7vh, 4vw);
     font-weight: bold;
     font-family: 'Colfax',Helvetica,sans-serif;
     padding: 3.5vh 24px 3.5vh 24px;
@@ -119,8 +119,5 @@ button:focus{
     height: 90vh;
 }
 
-#standings{
-    height: 90vh;
-}
 
 @font-face{font-family:'Colfax';font-weight:normal;src:url("https://lolstatic-a.akamaihd.net/webfonts/live/fonts/colfax/ColfaxWebRegular.woff2") format('woff2')}
