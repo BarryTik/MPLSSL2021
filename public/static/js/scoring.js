@@ -14,11 +14,15 @@ d3.json("data/scoring.json").then(data => {
     }
 
     for(var i = 0; i<team.length; i++){
+      if (team[i] in teamColors){
         chartColors[i] = teamColors[team[i]];
-
+      }
+      else {
+        chartColors[i] = "#FFFFFF";
+      }
     }
 
-    console.log(name.length);
+    // console.log(name.length);
     d3.select("#scoring")
       .style("height", `${name.length*6.5}vh`);
 
